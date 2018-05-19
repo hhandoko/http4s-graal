@@ -32,6 +32,8 @@ Now you can visit [`localhost:8080`](http://localhost:8080) from your browser.
 Alternatively:
   1. Run `./scripts/graal/bin/setup.sh` to download and setup Graal
   1. Run `./scripts/graal/bin/dist.sh` to create a native image distribution under the `/dist` directory.
+  1. Run `./scripts/graal/bin/build.sh` to create a local Docker container with the running application:
+     - [`localhost:9080`](http://localhost:9080) http4s + Azul Zulu 8
 
 ## Contributing
 

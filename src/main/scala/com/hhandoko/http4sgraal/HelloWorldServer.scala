@@ -17,9 +17,14 @@ object ServerStream {
 
   def helloWorldService[F[_]: Effect]: HttpService[F] = new HelloWorldService[F].service
 
-  def stream[F[_]: Effect](implicit ec: ExecutionContext): fs2.Stream[F, StreamApp.ExitCode] =
+  def stream[F[_]: Effect](implicit ec: ExecutionContext): fs2.Stream[F, StreamApp.ExitCode] = {
+    val host = Option(System.getenv("APP_HOST")).getOrElse("0.0.0.0")
+    val port = Option(System.getenv("APP_PORT")).map(_.toInt).getOrElse(8080)
+
     BlazeBuilder[F]
-      .bindHttp(8080, "0.0.0.0")
+      .bindHttp(port, host)
       .mountService(helloWorldService, "/")
       .serve
+  }
+
 }
