@@ -19,8 +19,9 @@ project/plugins/project/
 *.class
 *.log
 
+# End of https://www.gitignore.io/api/sbt,scala
+
 
 ### Others ###
-dist/
-
-# End of https://www.gitignore.io/api/sbt,scala
+tmp/
+scripts/graal/sdk/

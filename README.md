@@ -29,7 +29,13 @@ The version numbers denotes the specific version used to develop the web service
 
 Now you can visit [`localhost:8080`](http://localhost:8080) from your browser.
 
-Alternatively, run `./scripts/dist.sh` to create a native image distribution under the `/dist` directory.
+Alternatively:
+  1. Run `./scripts/graal/bin/setup.sh` to download and setup Graal
+  1. Run `./scripts/graal/bin/dist.sh` to create a native image distribution under the `/dist` directory.
+  1. Run `./scripts/graal/bin/build.sh` to create a local Docker container with the running application:
+     - [`localhost:9080`](http://localhost:9080) http4s + Azul Zulu 8
+
+_NOTE: http4s Docker container will be constrained to 1 CPU and 4GB of memory._
 
 ## Contributing
 
