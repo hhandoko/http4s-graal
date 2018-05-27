@@ -29,4 +29,6 @@ sudo docker build \
 sudo docker run \
   -d \
   -p ${APP_PORT}:${APP_PORT} \
+  --cpus="1" \
+  --memory="4g" --memory-swap="4g" \
   http4s-zulu8:latest
