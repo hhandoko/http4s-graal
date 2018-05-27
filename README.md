@@ -35,6 +35,8 @@ Alternatively:
   1. Run `./scripts/graal/bin/build.sh` to create a local Docker container with the running application:
      - [`localhost:9080`](http://localhost:9080) http4s + Azul Zulu 8
 
+_NOTE: http4s Docker container will be constrained to 1 CPU and 4GB of memory._
+
 ## Contributing
 
 We follow the "[feature-branch]" Git workflow.
