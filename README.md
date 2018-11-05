@@ -1,4 +1,5 @@
 [![License](https://img.shields.io/badge/license-Apache--2.0-brightgreen.svg)](LICENSE)
+[![Master Build Status](https://travis-ci.org/hhandoko/http4s-graal.svg?branch=master)](https://travis-ci.org/hhandoko/http4s-graal)
 
 # http4s + Graal
 
