@@ -13,7 +13,7 @@ object Commons {
     organization := "com.hhandoko",
     name := "http4s-graal",
     version := Source.fromFile("VERSION.txt").mkString,
-    scalaVersion := "2.12.6",
+    scalaVersion := "2.12.7",
     libraryDependencies ++= Seq(
       "ch.qos.logback" %  "logback-classic"     % logbackVersion,
       "org.http4s"     %% "http4s-blaze-server" % http4sVersion,
