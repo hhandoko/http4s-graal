@@ -14,7 +14,7 @@ TEMP_DIR=tmp
 # Graal version and path
 GRAAL_DIR=scripts/graal
 GRAAL_VERSION=`cat ${GRAAL_DIR}/VERSION.txt`
-GRAAL_HOME=${GRAAL_DIR}/sdk/graalvm-${GRAAL_VERSION}
+GRAAL_HOME=${GRAAL_DIR}/sdk/graalvm-ce-${GRAAL_VERSION}
 
 # Graal download and tarball name
 GRAAL_FILE=graalvm-ce-${GRAAL_VERSION}-linux-amd64.tar.gz
