@@ -37,6 +37,14 @@ setup_gatling() {
     else
         echo "${C_YELLOW}Skipping setup: Gatling already downloaded${C_RESET}"
     fi
+
+    if [ -d "${GATLING_HOME}/user-files/simulations/computerdatabase" ] ; then
+        echo "${C_YELLOW}Removing default simulations${C_RESET}"
+        rm -rf ${GATLING_HOME}/user-files/simulations/computerdatabase
+    fi
+
+    echo "${C_YELLOW}Copying http4s-graal simulations to 'user-files'${C_RESET}"
+    cp -rf ${GATLING_DIR}/simulations ${GATLING_HOME}/user-files
 }
 
 # Run
