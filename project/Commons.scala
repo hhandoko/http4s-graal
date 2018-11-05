@@ -5,7 +5,7 @@ import sbt._
 
 object Commons {
 
-  private val http4sVersion  = "0.18.9"
+  private val http4sVersion  = "0.18.20"
   private val logbackVersion = "1.2.3"
   private val specs2Version  = "4.1.0"
 
