@@ -24,7 +24,7 @@ APP_JAR=${APP_NAME}.jar
 # Graal version and path
 GRAAL_DIR=scripts/graal
 GRAAL_VERSION=`cat ${GRAAL_DIR}/VERSION.txt`
-GRAAL_HOME=${GRAAL_DIR}/sdk/graalvm-${GRAAL_VERSION}
+GRAAL_HOME=${GRAAL_DIR}/sdk/graalvm-ce-${GRAAL_VERSION}
 
 # Create distribution folder if it doesn't exist, and clear the contents
 clean_dist_folder() {

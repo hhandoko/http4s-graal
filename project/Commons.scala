@@ -5,7 +5,7 @@ import sbt._
 
 object Commons {
 
-  private val http4sVersion  = "0.18.9"
+  private val http4sVersion  = "0.18.20"
   private val logbackVersion = "1.2.3"
   private val specs2Version  = "4.1.0"
 
@@ -13,7 +13,7 @@ object Commons {
     organization := "com.hhandoko",
     name := "http4s-graal",
     version := Source.fromFile("VERSION.txt").mkString,
-    scalaVersion := "2.12.6",
+    scalaVersion := "2.12.7",
     libraryDependencies ++= Seq(
       "ch.qos.logback" %  "logback-classic"     % logbackVersion,
       "org.http4s"     %% "http4s-blaze-server" % http4sVersion,

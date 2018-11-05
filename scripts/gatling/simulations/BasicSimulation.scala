@@ -9,7 +9,7 @@ class BasicSimulation extends Simulation {
 
   val httpConf =
     http
-    .baseURL("http://localhost:9080")
+    .baseUrl("http://localhost:9080")
     .acceptHeader("text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8")
     .doNotTrackHeader("1")
     .acceptLanguageHeader("en-GB,en;q=0.5")
@@ -21,7 +21,7 @@ class BasicSimulation extends Simulation {
     .exec(http("Hello World request").get(s"/hello/${Random.alphanumeric.take(10).mkString}!"))
 
   setUp(
-    scn.inject(constantUsersPerSec(1000) during(5 minutes))
+    scn.inject(constantUsersPerSec(100) during(5 minutes))
       .protocols(httpConf)
   )
 }

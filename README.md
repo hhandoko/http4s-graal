@@ -11,14 +11,14 @@
 The following binaries / libraries need to be installed in order to compile the web service (including converting it to native image).
 The version numbers denotes the specific version used to develop the web service, it may not work under other minor versions:
 
-  - [Graal] v1.0.0-RC1
-  - [SBT] v1.1.x
+  - [Graal] v1.0.0-RC9
+  - [SBT] v1.2.x
 
 ## Setup Steps
 
   1. Install and configure Graal:
      1. Download Graal (CE / EE) and extract to a folder of your choice 
-     1. Add Graal binaries folder (`bin`) to `PATH`, e.g. `export PATH=~/graalvm-1.0.0-rc1/bin:$PATH`
+     1. Add Graal binaries folder (`bin`) to `PATH`, e.g. `export PATH=~/graalvm-ce-1.0.0-rc9/bin:$PATH`
   1. Install SBT:
      - Instructions for [Windows](https://www.scala-sbt.org/1.0/docs/Installing-sbt-on-Windows.html)
      - Instructions for [Mac](https://www.scala-sbt.org/1.0/docs/Installing-sbt-on-Mac.html)
@@ -42,7 +42,7 @@ _NOTE: http4s Docker container will be constrained to 1 CPU and 4GB of memory._
 [Portainer] is an open-source web-based Docker management UI. It allows viewing of container stats in realtime: CPU and
 memory usage, networking, and processes running in the container.
 
-  1. Run `./scripts/portainer/bin/setup.sh` to pull the latest Portainer image and create the data volume
+  1. Run `./scripts/portainer/bin/setup.sh` to pull the latest Portainer image and create the data volume.
   1. Run `./scripts/portainer/bin/start.sh` to start the Portainer container:
      - [`localhost:9000`](http://localhost:9000) Portainer web UI
 
