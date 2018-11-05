@@ -30,12 +30,28 @@ The version numbers denotes the specific version used to develop the web service
 Now you can visit [`localhost:8080`](http://localhost:8080) from your browser.
 
 Alternatively:
-  1. Run `./scripts/graal/bin/setup.sh` to download and setup Graal
+  1. Run `./scripts/graal/bin/setup.sh` to download and setup Graal.
   1. Run `./scripts/graal/bin/dist.sh` to create a native image distribution under the `/dist` directory.
   1. Run `./scripts/graal/bin/build.sh` to create a local Docker container with the running application:
      - [`localhost:9080`](http://localhost:9080) http4s + Azul Zulu 8
 
 _NOTE: http4s Docker container will be constrained to 1 CPU and 4GB of memory._
+
+## Container Management and Monitoring
+
+[Portainer] is an open-source web-based Docker management UI. It allows viewing of container stats in realtime: CPU and
+memory usage, networking, and processes running in the container.
+
+  1. Run `./scripts/portainer/bin/setup.sh` to pull the latest Portainer image and create the data volume
+  1. Run `./scripts/portainer/bin/start.sh` to start the Portainer container:
+     - [`localhost:9000`](http://localhost:9000) Portainer web UI
+
+## Gatling Load Testing
+
+[Gatling] is an open-source load and performance testing framework based on Scala, Akka and Netty.
+
+  1. Run `./scripts/gatling/bin/setup.sh` to download and setup Gatling.
+  1. Run `./scripts/gatling/bin/start.sh` to run the load testing simulation(s).
 
 ## Contributing
 
@@ -72,6 +88,8 @@ Please read [CONTRIBUTING] for more details.
 
 [CONTRIBUTING]: https://github.com/hhandoko/diskusi/blob/master/CONTRIBUTING.md
 [feature-branch]: http://nvie.com/posts/a-successful-git-branching-model/
+[Gatling]: https://gatling.io/
 [Graal]: https://www.graalvm.org/
 [LICENSE]: https://github.com/hhandoko/diskusi/blob/master/LICENSE.txt
+[Portainer]: https://portainer.io/
 [SBT]: https://www.scala-sbt.org/

@@ -24,4 +24,5 @@ project/plugins/project/
 
 ### Others ###
 tmp/
+scripts/gatling/sdk/
 scripts/graal/sdk/

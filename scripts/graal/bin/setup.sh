@@ -34,6 +34,8 @@ setup_graal() {
         (mkdir -p ${GRAAL_HOME} \
             && cd ${TEMP_DIR} \
             && tar -xvzf ${GRAAL_FILE} -C ../${GRAAL_DIR}/sdk)
+    else
+        echo "${C_YELLOW}Skipping setup: Graal already downloaded${C_RESET}"
     fi
 }
 
