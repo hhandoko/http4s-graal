@@ -43,7 +43,7 @@ create_assembly() {
 create_native() {
     if [ ! -d "${GRAAL_HOME}" ] ; then
         echo "${C_RED}GRAAL_HOME does not exist${C_RESET}"
-        echo "Please run './scripts/graal/setup.sh' to setup Graal"
+        echo "Please run './scripts/graal/bin/setup.sh' to setup Graal"
         exit 1
     fi
 
