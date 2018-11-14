@@ -1,9 +1,10 @@
-package computerdatabase
+package com.hhandoko.http4sgraal
+
+import scala.concurrent.duration._
+import scala.util.Random
 
 import io.gatling.core.Predef._
 import io.gatling.http.Predef._
-import scala.concurrent.duration._
-import scala.util.Random
 
 class BasicSimulation extends Simulation {
 
@@ -21,7 +22,7 @@ class BasicSimulation extends Simulation {
     .exec(http("Hello World request").get(s"/hello/${Random.alphanumeric.take(10).mkString}!"))
 
   setUp(
-    scn.inject(constantUsersPerSec(100) during(5 minutes))
+    scn.inject(constantUsersPerSec(500) during(5 minutes))
       .protocols(httpConf)
   )
 }
