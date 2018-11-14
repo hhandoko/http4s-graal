@@ -15,7 +15,7 @@ GATLING_HOME=${GATLING_DIR}/sdk/gatling-charts-highcharts-bundle-${GATLING_VERSI
 
 # Run gatling simulations
 run_gatling() {
-    ${GATLING_HOME}/bin/gatling.sh
+    ${GATLING_HOME}/bin/gatling.sh -s com.hhandoko.http4sgraal.BasicSimulation
 }
 
 # Run
