@@ -33,10 +33,21 @@ Now you can visit [`localhost:8080`](http://localhost:8080) from your browser.
 Alternatively:
   1. Run `./scripts/graal/bin/setup.sh` to download and setup Graal.
   1. Run `./scripts/graal/bin/dist.sh` to create a native image distribution under the `/dist` directory.
-  1. Run `./scripts/graal/bin/build.sh` to create a local Docker container with the running application:
-     - [`localhost:9080`](http://localhost:9080) http4s + Azul Zulu 8
 
-_NOTE: http4s Docker container will be constrained to 1 CPU and 4GB of memory._
+## Docker Images
+
+Several Dockerfiles have been provided to allow project compilation and packaging, targeting multiple runtime
+environments. It utilises multi-stage Docker builds, so no other dependency is required apart from Docker itself.
+All containers by default will be accessible at port 9080, e.g. [`localhost:9080`](http://localhost:9080).
+
+Run `./scripts/graal/bin/build.sh -i <image>` where image is one of the following:
+
+  - `zulu8` (default) Azul Zulu 8 on Ubuntu 18.04
+  - `zulu11` Azul Zulu 11 on Ubuntu 18.04
+  - `graal` GraalVM on Oracle Linux 7 (slim)
+  - `native` Graal + Substrate native image on Oracle Linux 7 (slim)
+
+_NOTE: http4s Docker containers will be constrained to 1 CPU and 4GB of memory._
 
 ## Container Management and Monitoring
 
