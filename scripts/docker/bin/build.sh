@@ -8,7 +8,7 @@ C_RED='\033[0;31m'
 C_GREEN='\033[0;32m'
 C_YELLOW='\033[1;33m'
 
-# Set project root folder, default to `.`
+# Set project root folder, defaults to `.`
 PROJECT_ROOT_FOLDER=.
 
 # Set application version
@@ -39,18 +39,12 @@ done
 
 validate_image_prerequisites() {
     case $APP_IMAGE in
-        zulu8)
-            echo "${C_YELLOW}Selected '$APP_IMAGE' image${C_RESET}"
-            ;;
-        graal)
-            echo "${C_YELLOW}Selected '$APP_IMAGE' image${C_RESET}"
-            ;;
-        native)
+        zulu8|zulu11|graal|native)
             echo "${C_YELLOW}Selected '$APP_IMAGE' image${C_RESET}"
             ;;
         *)
             echo "${C_RED}Unknown image '$APP_IMAGE' selected${C_RESET}"
-            echo "Valid options are: graal, native, zulu8"
+            echo "Valid options are: graal, native, zulu8, zulu11"
             exit 1
             ;;
     esac
