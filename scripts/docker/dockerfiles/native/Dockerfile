@@ -14,12 +14,13 @@ RUN     (SBT_VERSION=$(cat project/build.properties | cut -d '=' -f 2 | tr -d '[
           && tar -xzf sbt-${SBT_VERSION}.tgz \
           && ./sbt/bin/sbt -mem 4096 sbtVersion)
 RUN     ./sbt/bin/sbt -mem 4096 clean assembly
+RUN     native-image -H:+ReportUnsupportedElementsAtRuntime -jar target/scala-2.12/${APP_NAME}.jar
 
 # ~~~~~~
 
-FROM    oracle/graalvm-ce:1.0.0-rc9
+FROM    oraclelinux:7-slim
 LABEL   maintainer="Herdy Handoko <herdy.handoko@gmail.com>"
-LABEL   description="http4s on Graal VM web service"
+LABEL   description="http4s Graal native image web service"
 
 ARG     APP_NAME
 ENV     APP_NAME ${APP_NAME:-http4s-graal-assembly}
@@ -27,7 +28,7 @@ ARG     APP_PORT
 ENV     APP_PORT ${APP_PORT:-8080}
 
 WORKDIR app
-COPY    --from=builder builder/target/scala-2.12/${APP_NAME}.jar .
+COPY    --from=builder builder/${APP_NAME} .
 
 EXPOSE  $APP_PORT
-CMD     java -Xmx4096m -jar ${APP_NAME}.jar
+CMD     ./${APP_NAME}
