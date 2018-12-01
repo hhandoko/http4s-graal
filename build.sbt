@@ -1,4 +1,4 @@
 lazy val root =
   (project in file("."))
     .enablePlugins(GatlingPlugin)
-    .settings(Commons.settings: _*)
+    .settings(Common.settings: _*)
