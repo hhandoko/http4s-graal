@@ -62,8 +62,7 @@ memory usage, networking, and processes running in the container.
 
 [Gatling] is an open-source load and performance testing framework based on Scala, Akka and Netty.
 
-  1. Run `./scripts/gatling/bin/setup.sh` to download and setup Gatling.
-  1. Run `./scripts/gatling/bin/start.sh` to run the load testing simulation(s).
+  1. Run `sbt gatling:test` to download, setup, and run Gatling load testing simulation(s).
 
 ## Contributing
 
