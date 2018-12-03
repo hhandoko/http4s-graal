@@ -17,3 +17,7 @@ addSbtPlugin("io.spray" % "sbt-revolver" % "0.9.1")
 // Pass partial unification Scala compiler flag
 // See: https://github.com/fiadliel/sbt-partial-unification
 addSbtPlugin("org.lyranthe.sbt" % "partial-unification" % "1.1.2")
+
+// Gatling load testing SBT plugin
+// See: https://github.com/gatling/gatling
+addSbtPlugin("io.gatling" % "gatling-sbt" % "3.0.0")
