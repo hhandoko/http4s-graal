@@ -9,7 +9,7 @@ object Common {
   private val gatlingVersion    = "3.0.1.1"
   private val logbackVersion    = "1.2.3"
   private val pureConfigVersion = "0.10.2"
-  private val specs2Version     = "4.1.0"
+  private val specs2Version     = "4.5.1"
 
   val settings = Seq(
     organization := "com.hhandoko",
