@@ -6,7 +6,7 @@ import sbt._
 object Common {
 
   private val http4sVersion     = "0.19.0"
-  private val gatlingVersion    = "3.0.1.1"
+  private val gatlingVersion    = "3.0.3"
   private val logbackVersion    = "1.2.3"
   private val pureConfigVersion = "0.10.2"
   private val specs2Version     = "4.5.1"
