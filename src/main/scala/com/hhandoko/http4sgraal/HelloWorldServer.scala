@@ -1,29 +1,33 @@
 package com.hhandoko.http4sgraal
 
-import scala.concurrent.ExecutionContext
+import cats.effect._
+import cats.implicits._
+import fs2.Stream
+import org.http4s.HttpApp
+import org.http4s.server.Router
+import org.http4s.server.blaze.BlazeServerBuilder
+import org.http4s.syntax.kleisli._
 
-import cats.effect.{Effect, IO}
-import fs2.StreamApp
-import org.http4s.HttpService
-import org.http4s.server.blaze.BlazeBuilder
+object HelloWorldServer extends IOApp {
 
-object HelloWorldServer extends StreamApp[IO] {
-  import scala.concurrent.ExecutionContext.Implicits.global
-
-  def stream(args: List[String], requestShutdown: IO[Unit]): fs2.Stream[IO, StreamApp.ExitCode] = ServerStream.stream[IO]
+  def run(args: List[String]): IO[ExitCode] =
+    ServerStream.stream[IO]
+      .compile
+      .drain.as(ExitCode.Success)
 }
 
 object ServerStream {
 
-  def helloWorldService[F[_]: Effect]: HttpService[F] = new HelloWorldService[F].service
+  def helloWorldApp[F[_]: Effect: ContextShift: Timer]: HttpApp[F] =
+    Router("/" -> HelloWorldService[F].routes).orNotFound
 
-  def stream[F[_]: Effect](implicit ec: ExecutionContext): fs2.Stream[F, StreamApp.ExitCode] = {
+  def stream[F[_]: ConcurrentEffect: Timer: ContextShift]: Stream[F, ExitCode] = {
     val host = Option(System.getenv("APP_HOST")).getOrElse("0.0.0.0")
     val port = Option(System.getenv("APP_PORT")).map(_.toInt).getOrElse(8080)
 
-    BlazeBuilder[F]
+    BlazeServerBuilder[F]
       .bindHttp(port, host)
-      .mountService(helloWorldService, "/")
+      .withHttpApp(helloWorldApp[F])
       .serve
   }
 
