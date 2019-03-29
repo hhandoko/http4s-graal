@@ -15,7 +15,7 @@ class HelloWorldServiceSpec extends Specification { def is = s2"""
 
   private[this] val retHelloWorld: Response[IO] = {
     val getHW = Request[IO](Method.GET, Uri.uri("/hello/world"))
-    new HelloWorldService[IO].service.orNotFound(getHW).unsafeRunSync()
+    new HelloWorldService[IO].routes.orNotFound(getHW).unsafeRunSync()
   }
 
   private[this] def uriReturns200: MatchResult[Status] =
