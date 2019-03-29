@@ -15,7 +15,7 @@ object Common {
     organization := "com.hhandoko",
     name := "http4s-graal",
     version := Source.fromFile("VERSION.txt").mkString,
-    scalaVersion := "2.12.7",
+    scalaVersion := "2.12.8",
     libraryDependencies ++= Seq(
       "ch.qos.logback"        %  "logback-classic"           % logbackVersion,
       "com.github.pureconfig" %% "pureconfig"                % pureConfigVersion,
