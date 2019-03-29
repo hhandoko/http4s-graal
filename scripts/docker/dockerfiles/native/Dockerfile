@@ -1,4 +1,4 @@
-FROM    oracle/graalvm-ce:1.0.0-rc9 as builder
+FROM    oracle/graalvm-ce:1.0.0-rc14 as builder
 LABEL   maintainer="Herdy Handoko <herdy.handoko@gmail.com>"
 LABEL   description="http4s Graal builder"
 

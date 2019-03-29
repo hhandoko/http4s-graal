@@ -12,14 +12,14 @@
 The following binaries / libraries need to be installed in order to compile the web service (including converting it to native image).
 The version numbers denotes the specific version used to develop the web service, it may not work under other minor versions:
 
-  - [Graal] v1.0.0-RC9
+  - [Graal] v1.0.0-RC14
   - [SBT] v1.2.x
 
 ## Setup Steps
 
   1. Install and configure Graal:
      1. Download Graal (CE / EE) and extract to a folder of your choice 
-     1. Add Graal binaries folder (`bin`) to `PATH`, e.g. `export PATH=~/graalvm-ce-1.0.0-rc9/bin:$PATH`
+     1. Add Graal binaries folder (`bin`) to `PATH`, e.g. `export PATH=~/graalvm-ce-1.0.0-rc14/bin:$PATH`
   1. Install SBT:
      - Instructions for [Windows](https://www.scala-sbt.org/1.0/docs/Installing-sbt-on-Windows.html)
      - Instructions for [Mac](https://www.scala-sbt.org/1.0/docs/Installing-sbt-on-Mac.html)
